@@ -6,7 +6,7 @@
 3. sudo vim /etc/passwd, change the first line "/bin/bash" to "/bin/zsh"
 
 ## Install oh-my-zsh:  
-	wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
+wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
 
 ## The plugins I use:  
 1. git
