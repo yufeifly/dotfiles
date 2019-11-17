@@ -9,8 +9,13 @@ call vundle#begin()
 
 " 让vundle管理插件版本,必须
 Plugin 'VundleVim/Vundle.vim'
-
+"自动括号
 Plugin 'jiangmiao/auto-pairs'
+"nerdtree
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'ctrlpvim/ctrlp.vim'
+"Plugin 'bling/vim-airline'
 " 以下范例用来支持不同格式的插件安装.
 " 请将安装插件的命令放在vundle#begin和vundle#end之间.
 " Github上的插件
@@ -45,16 +50,91 @@ filetype plugin indent on    " 必须 加载vim自带和插件相应的语法和
 " 将你自己对非插件片段放在这行之后
 
 
-"-------------------------------------------------------------------------
+"common-------------------------------------------------------------------------
+"老板键
+let mapleader=","
 set nu
 set showcmd
 set cul
 set tabstop=4
 set shiftwidth=4
 set autoindent
+set pastetoggle=<F2>
+set hls is
 "set paste
-"mouse
+"鼠标
 "set mouse=a
 "set selection=exclusive
 "set selectmode=mouse,key
 hi MatchParen ctermbg=Yellow guibg=lightblue
+"整理C语言代码
+map <F12> gg=G
+"end common-------------------------------------------------------------------------
+
+"nerdtree {{{
+" 关闭NERDTree快捷键
+map <F3> :NERDTreeToggle<CR>
+""当NERDTree为剩下的唯一窗口时自动关闭
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+""修改树的显示图标
+let g:NERDTreeDirArrowExpandable = '►'
+let g:NERDTreeDirArrowCollapsible = '▼'
+let NERDTreeAutoCenter=1
+" 显示行号
+let NERDTreeShowLineNumbers=1
+" 是否显示隐藏文件
+let NERDTreeShowHidden=1
+" 设置宽度
+let NERDTreeWinSize=25
+" 在终端启动vim时，共享NERDTree
+let g:nerdtree_tabs_open_on_console_startup=1
+" 忽略一下文件的显示
+let NERDTreeIgnore=['\.pyc','\~$','\.swp']
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
+" NERDTree}}}
+
+
+"airline{{{
+"if !exists('g:airline_symbols')
+"	let g:airline_symbols = {}
+"endif
+"let g:airline_left_sep = '▶'
+"let g:airline_left_alt_sep = '❯'
+"let g:airline_right_sep = '◀'
+"let g:airline_right_alt_sep = '❮'
+"let g:airline_symbols.linenr = '¶'
+"let g:airline_symbols.branch = '⎇'
+
+" 是否打开tabline
+" let g:airline#extensions#tabline#enabled = 1"
+" }}}
+
+
+
+"CtrlP{{{
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+map <leader>f :CtrlPMRU<CR>
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
+    \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
+    \ }
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_working_path_mode=0
+let g:ctrlp_match_window_bottom=1
+let g:ctrlp_max_height=15
+let g:ctrlp_match_window_reversed=0
+let g:ctrlp_mruf_max=500
+let g:ctrlp_follow_symlinks=1
+"CtrlP}}}
