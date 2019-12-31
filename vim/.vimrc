@@ -53,14 +53,15 @@ filetype plugin indent on    " 必须 加载vim自带和插件相应的语法和
 
 
 "common-------------------------------------------------------------------------
-imap <Up> <Nop>
+"imap <Up> <Nop>
 nmap <Up> <Nop>
-imap <Down> <Nop>
+"imap <Down> <Nop>
 nmap <Down> <Nop>
 imap <Left> <Nop>
 nmap <Left> <Nop>
 imap <Right> <Nop>
 nmap <Right> <Nop>
+map <C-j> <Down>
 "老板键
 let mapleader=","
 "设置监听行号，插入模式是绝对行号，常规模式是相对行号
@@ -91,7 +92,7 @@ set hls is
 "set selection=exclusive
 "set selectmode=mouse,key
 hi MatchParen ctermbg=Yellow guibg=lightblue
-"整理C语言代码
+"整理代码
 map <F12> gg=G
 "end common-------------------------------------------------------------------------
 "
