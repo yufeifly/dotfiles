@@ -24,10 +24,11 @@ wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - 
 5. zsh-history-substring-search (need to git clone the corresponding repo)  
 
    git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
+   
+   在zshrc文件中加上如下的三行：
 
-  在zshrc文件中加上如下的三行：
-
-  `plugins=(
+```
+  plugins=(
     git
     history-substring-search
   )
@@ -36,7 +37,10 @@ wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - 
 
   bindkey -v
   bindkey "^[[A" history-substring-search-up
-  bindkey "^[[B" history-substring-search-down`
+  bindkey "^[[B" history-substring-search-down
+```
+
+
 
 ## Run the following command to make it work:
 source ~/.zshrc
