@@ -21,7 +21,7 @@ wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - 
 4. zsh-autosuggestions (need to git clone the corresponding repo)  
 	git clone git://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 	
-5. zsh-history-substring-search (need to git clone the corresponding repo)  
+5. history-substring-search (need to git clone the corresponding repo)  
 
    git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
    
