@@ -1,3 +1,21 @@
+# 安装与配置
+
+- 直接使用apt安装
+
+> sudo apt install tmux
+
+- 配置文件在~/.tmux.conf
+
+> 如果没有这个文件，就创建一个。
+>
+> 可以将本项目中的.tmux.conf文件中的内容复制到对应文件。
+
+- 生效
+
+> tmux source ~/.tmux.conf
+
+
+
 # 使用技巧
 
 ## 复制粘贴

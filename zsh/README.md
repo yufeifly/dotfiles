@@ -45,3 +45,9 @@ wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - 
 ## Run the following command to make it work:
 source ~/.zshrc
 
+## root用户
+
+对于root用户，需要在root模式下再安装一边oh-my-zsh和相应的插件，并修改zshrc文件内容。除此之外，还需要在zshrc文件头添加一行
+
+> source /etc/profile
+
