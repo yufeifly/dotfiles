@@ -17,6 +17,9 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-surround'
+"状态栏
+Plugin 'itchyny/lightline.vim'
+Plugin 'scrooloose/nerdcommenter'
 "Plugin 'bling/vim-airline'
 " 以下范例用来支持不同格式的插件安装.
 " 请将安装插件的命令放在vundle#begin和vundle#end之间.
@@ -53,6 +56,7 @@ filetype plugin indent on    " 必须 加载vim自带和插件相应的语法和
 
 
 "common-------------------------------------------------------------------------
+let mapleader=","
 "imap <Up> <Nop>
 nmap <Up> <Nop>
 "imap <Down> <Nop>
@@ -63,7 +67,7 @@ imap <Right> <Nop>
 nmap <Right> <Nop>
 map <C-j> <Down>
 "老板键
-let mapleader=","
+"inoremap jk <esc>
 "设置监听行号，插入模式是绝对行号，常规模式是相对行号
 set nu rnu
 augroup numbertoggle
@@ -93,6 +97,8 @@ function SwitchMouseMode()
         echo "Mouse is enabled."
     endif
 endfunction
+
+syntax on
 set showcmd
 set cul
 set tabstop=4
@@ -163,21 +169,12 @@ let g:NERDTreeIndicatorMapCustom = {
 " NERDTree}}}
 
 
-"airline{{{
-"if !exists('g:airline_symbols')
-"	let g:airline_symbols = {}
-"endif
-"let g:airline_left_sep = '▶'
-"let g:airline_left_alt_sep = '❯'
-"let g:airline_right_sep = '◀'
-"let g:airline_right_alt_sep = '❮'
-"let g:airline_symbols.linenr = '¶'
-"let g:airline_symbols.branch = '⎇'
+" 状态栏
+set laststatus=2
+let g:lightline = { 'colorscheme': 'powerline', }
 
-" 是否打开tabline
-" let g:airline#extensions#tabline#enabled = 1"
-" }}}
-
+" nerdcommenter
+let g:NERDSpaceDelims=1
 
 
 "CtrlP{{{
