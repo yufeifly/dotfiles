@@ -7,19 +7,20 @@ call vundle#begin()
 " 另一种选择, 指定一个vundle安装插件的路径
 "call vundle#begin('~/some/path/here')
 
-" 让vundle管理插件版本,必须
+" let vundle manage plugin, it is a must
 Plugin 'VundleVim/Vundle.vim'
-"自动括号
+" auto complete brackets
 Plugin 'jiangmiao/auto-pairs'
-"nerdtree
+" nerdtree
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-surround'
-"状态栏
+" status bar
 Plugin 'itchyny/lightline.vim'
 Plugin 'scrooloose/nerdcommenter'
+" multi cursor
 Plugin 'mg979/vim-visual-multi' 
 "Plugin 'bling/vim-airline'
 " 以下范例用来支持不同格式的插件安装.
