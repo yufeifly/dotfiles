@@ -20,6 +20,7 @@ Plugin 'tpope/vim-surround'
 "状态栏
 Plugin 'itchyny/lightline.vim'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'mg979/vim-visual-multi' 
 "Plugin 'bling/vim-airline'
 " 以下范例用来支持不同格式的插件安装.
 " 请将安装插件的命令放在vundle#begin和vundle#end之间.
